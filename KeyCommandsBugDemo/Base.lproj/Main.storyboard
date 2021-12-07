@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeyCommandsBugDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressed arrows: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-tb-WM5">
+                                <rect key="frame" x="20" y="285.5" width="374" height="521.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICB-i8-eeK">
+                                <rect key="frame" x="20" y="99" width="374" height="186.5"/>
+                                <mutableString key="text">Instructon: 1. Press on keyboard up,down,left,right arrows and observe they are handled properly in ViewController 2. Press on "Preview - Proper" button, then press on keyboard up,down,left,right arrows and observe they are handled properly in QLPreviewViewController.  3. Press on "Preview - Bug" button, then press on keyboard up,down,left,right arrows and observe they are NOT handled properly in the same QLPreviewViewController
+4. Check the code and validate, that it doesn't work when QLPreviewItem is a proper asset</mutableString>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwZ-Aq-qeC">
+                                <rect key="frame" x="314" y="44" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="MRE-zr-BcA"/>
+                                    <constraint firstAttribute="height" constant="35" id="fLb-em-Tol"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Clear"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSt-nK-xLh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emq-iu-JIW">
+                                <rect key="frame" x="244" y="827" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="eRI-bT-mJC"/>
+                                    <constraint firstAttribute="height" constant="35" id="seA-sn-PsK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Preview - Bug"/>
+                                <connections>
+                                    <action selector="buggedPreviewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tN5-WA-45w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpj-1Q-Nl1">
+                                <rect key="frame" x="20" y="827" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Je3-G4-O87"/>
+                                    <constraint firstAttribute="height" constant="35" id="zPj-Yd-Vsw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Preview - Proper"/>
+                                <connections>
+                                    <action selector="properPreviewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dW-5g-RoI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gpj-1Q-Nl1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Gc-1g-oXL"/>
+                            <constraint firstItem="Gpj-1Q-Nl1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CBQ-Gt-ZWr"/>
+                            <constraint firstItem="GwZ-Aq-qeC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FJG-sQ-Hln"/>
+                            <constraint firstItem="ICB-i8-eeK" firstAttribute="top" secondItem="GwZ-Aq-qeC" secondAttribute="bottom" constant="20" id="Ovt-Um-b8a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="emq-iu-JIW" secondAttribute="trailing" constant="20" id="TYy-2v-TEV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GwZ-Aq-qeC" secondAttribute="trailing" constant="20" id="alR-HD-r7h"/>
+                            <constraint firstItem="GwZ-Aq-qeC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="100" constant="20" id="efJ-aL-sR7"/>
+                            <constraint firstItem="emq-iu-JIW" firstAttribute="top" secondItem="dNZ-tb-WM5" secondAttribute="bottom" constant="20" id="iOe-Ux-avP"/>
+                            <constraint firstItem="emq-iu-JIW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jxd-9x-iWn"/>
+                            <constraint firstItem="ICB-i8-eeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kGG-tu-Ch9"/>
+                            <constraint firstItem="dNZ-tb-WM5" firstAttribute="top" secondItem="ICB-i8-eeK" secondAttribute="bottom" id="kTo-xa-HFK"/>
+                            <constraint firstItem="dNZ-tb-WM5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pz7-UD-G9R"/>
+                            <constraint firstItem="emq-iu-JIW" firstAttribute="leading" secondItem="Gpj-1Q-Nl1" secondAttribute="trailing" priority="100" constant="10" id="rd1-5F-Wwx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dNZ-tb-WM5" secondAttribute="trailing" constant="20" id="ude-wc-K4r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ICB-i8-eeK" secondAttribute="trailing" constant="20" id="xLs-af-p4n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logLabel" destination="dNZ-tb-WM5" id="AzL-uZ-h6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
